@@ -95,21 +95,21 @@ const RegisterModal = ({ isOpen, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md p-4 flex justify-center items-center"
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm p-4 flex justify-center items-center"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-lg bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10 p-8 sm:p-10 text-white flex flex-col my-auto transition-all"
+        className="relative w-full max-w-lg bg-gradient-to-br from-[#FCFBF7] via-[#F9F7F2] to-[#F5F2E9] rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(166,77,51,0.25)] border border-[#A64D33]/15 p-8 sm:p-10 text-zinc-800 flex flex-col my-auto transition-all duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button 
-          className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center bg-black/60 hover:bg-black/85 text-zinc-400 hover:text-white rounded-full transition-colors border border-white/10 focus:outline-none"
+          className="absolute top-4 right-4 z-20 w-9 h-9 flex items-center justify-center bg-[#A64D33]/5 hover:bg-[#A64D33]/10 text-primary rounded-full transition-all border border-primary/10 hover:border-primary/20 focus:outline-none cursor-pointer"
           onClick={onClose}
           aria-label="Close form"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
@@ -120,8 +120,10 @@ const RegisterModal = ({ isOpen, onClose }) => {
               <span className="text-primary font-bold text-xs uppercase tracking-widest mb-2 block">
                 Đồng hành cùng di sản
               </span>
-              <h3 className="text-3xl font-bold text-white tracking-tight">Đăng Ký Tư Vấn</h3>
-              <p className="text-zinc-400 text-sm mt-2 leading-relaxed">
+              <h3 className="text-3xl font-bold text-zinc-900 tracking-tight">Đăng Ký Tư Vấn</h3>
+              {/* Delicate traditional element decoration */}
+              <div className="w-16 h-[2px] bg-primary/20 mx-auto mt-3 mb-3" />
+              <p className="text-zinc-600 text-sm leading-relaxed max-w-xs mx-auto">
                 Hãy để TheAlcheZ đồng hành đưa câu chuyện và thương hiệu làng nghề của bạn tỏa sáng
               </p>
             </div>
@@ -140,9 +142,9 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   disabled={isLoading}
                   placeholder="Nguyễn Văn A" 
-                  className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary focus:ring-primary'} rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-1 transition-all text-sm`}
+                  className={`w-full bg-white border ${errors.name ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-zinc-200 focus:border-primary focus:ring-primary/20'} rounded-2xl px-5 py-3 text-zinc-800 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all text-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.01)]`}
                 />
-                {errors.name && <span className="text-red-400 text-xs mt-0.5">{errors.name}</span>}
+                {errors.name && <span className="text-red-500 text-xs mt-0.5">{errors.name}</span>}
               </div>
 
               {/* Phone */}
@@ -157,9 +159,9 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   disabled={isLoading}
                   placeholder="0912 345 678" 
-                  className={`w-full bg-white/5 border ${errors.phone ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary focus:ring-primary'} rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-1 transition-all text-sm`}
+                  className={`w-full bg-white border ${errors.phone ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-zinc-200 focus:border-primary focus:ring-primary/20'} rounded-2xl px-5 py-3 text-zinc-800 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all text-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.01)]`}
                 />
-                {errors.phone && <span className="text-red-400 text-xs mt-0.5">{errors.phone}</span>}
+                {errors.phone && <span className="text-red-500 text-xs mt-0.5">{errors.phone}</span>}
               </div>
 
               {/* Email */}
@@ -174,9 +176,9 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   disabled={isLoading}
                   placeholder="example@gmail.com" 
-                  className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary focus:ring-primary'} rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-1 transition-all text-sm`}
+                  className={`w-full bg-white border ${errors.email ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-zinc-200 focus:border-primary focus:ring-primary/20'} rounded-2xl px-5 py-3 text-zinc-800 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all text-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.01)]`}
                 />
-                {errors.email && <span className="text-red-400 text-xs mt-0.5">{errors.email}</span>}
+                {errors.email && <span className="text-red-500 text-xs mt-0.5">{errors.email}</span>}
               </div>
 
               {/* Village */}
@@ -191,7 +193,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   disabled={isLoading}
                   placeholder="Làng cờ Từ Vân, Gốm Bát Tràng..." 
-                  className="w-full bg-white/5 border border-white/10 focus:border-primary focus:ring-primary rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-1 transition-all text-sm"
+                  className="w-full bg-white border border-zinc-200 focus:border-primary focus:ring-primary/20 focus:ring-2 rounded-2xl px-5 py-3 text-zinc-800 placeholder-zinc-400 focus:outline-none transition-all text-sm shadow-[inset_0_1px_2px_rgba(0,0,0,0.01)]"
                 />
               </div>
 
@@ -207,7 +209,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   disabled={isLoading}
                   placeholder="Tôi muốn quảng bá thương hiệu, làm video ngắn cho làng nghề..." 
                   rows="3"
-                  className="w-full bg-white/5 border border-white/10 focus:border-primary focus:ring-primary rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-1 transition-all text-sm resize-none"
+                  className="w-full bg-white border border-zinc-200 focus:border-primary focus:ring-primary/20 focus:ring-2 rounded-2xl px-5 py-3 text-zinc-800 placeholder-zinc-400 focus:outline-none transition-all text-sm resize-none shadow-[inset_0_1px_2px_rgba(0,0,0,0.01)]"
                 />
               </div>
 
@@ -215,7 +217,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
               <button 
                 type="submit"
                 disabled={isLoading}
-                className="btn-primary w-full py-3.5 mt-4 text-base font-bold shadow-lg hover:shadow-primary/20 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-4 mt-6 text-base font-bold bg-gradient-to-r from-primary to-[#C05D41] hover:brightness-105 text-white rounded-full shadow-lg shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isLoading ? (
                   <>
@@ -229,7 +231,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   <>
                     <span>Gửi thông tin đăng ký</span>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </>
                 )}
@@ -240,18 +242,20 @@ const RegisterModal = ({ isOpen, onClose }) => {
           /* Success Screen */
           <div className="text-center py-10 flex flex-col items-center justify-center">
             {/* Animated Success Checkmark */}
-            <div className="w-20 h-20 bg-primary/20 text-primary rounded-full flex items-center justify-center mb-8 border border-primary/30 shadow-lg animate-bounce">
+            <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-8 border border-primary/20 shadow-md shadow-primary/5 animate-bounce">
               <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Đăng Ký Thành Công!</h3>
-            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-sm mb-8">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-zinc-900 tracking-tight">Đăng Ký Thành Công!</h3>
+            {/* Delicate divider line */}
+            <div className="w-16 h-[2px] bg-primary/20 mx-auto mt-2 mb-4" />
+            <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-sm mb-8 px-2 font-medium">
               Cảm ơn bạn! Thông tin đăng ký đã được gửi trực tiếp tới đội ngũ **TheAlcheZ** tại email <strong className="text-primary font-bold">theaichez@gmail.com</strong> trong nền. Chúng tôi sẽ sớm liên hệ lại với bạn qua thông tin đã cung cấp!
             </p>
             <button 
               onClick={onClose}
-              className="btn-primary w-full py-3.5 text-base font-bold shadow-lg hover:shadow-primary/20 transition-all text-center"
+              className="w-full py-4 text-base font-bold bg-gradient-to-r from-primary to-[#C05D41] hover:brightness-105 text-white rounded-full shadow-lg shadow-primary/20 active:scale-[0.98] transition-all text-center cursor-pointer"
             >
               Hoàn tất
             </button>
