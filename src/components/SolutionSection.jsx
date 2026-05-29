@@ -1,10 +1,10 @@
 import React from 'react';
-import solutionImg from '../assets/solution.png';
+import solutionCardImg from '../assets/_MG_0093.jpg';
 
 const SolutionSection = () => {
 
   return (
-    <section id="solution" className="relative py-24 overflow-hidden min-h-[600px] flex items-center" style={{ backgroundImage: `url(${solutionImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section id="solution" className="relative py-24 overflow-hidden min-h-[600px] flex items-center" style={{ backgroundImage: `url(${solutionCardImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Overlay */}
       <div className="absolute inset-0 bg-secondary/80 backdrop-blur-sm"></div>
 
@@ -27,17 +27,11 @@ const SolutionSection = () => {
           <div className="lg:w-1/2 relative hidden lg:block">
             <div className="relative rounded-[40px] overflow-hidden border-8 border-white/10 shadow-2xl">
               <img
-                src={solutionImg}
+                src={solutionCardImg}
                 alt="Professional filming session"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
-            </div>
-            {/* Play button overlay decorator */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg animate-pulse cursor-pointer">
-              <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
             </div>
           </div>
         </div>

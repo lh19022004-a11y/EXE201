@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ onStart }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:block">
-            <button className="btn-primary py-2 px-6 text-sm">
+            <button onClick={onStart} className="btn-primary py-2 px-6 text-sm">
               Bắt đầu ngay
             </button>
           </div>

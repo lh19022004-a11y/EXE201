@@ -1,7 +1,7 @@
 import React from 'react';
 import heroImg from '../assets/hero.png';
 
-const HeroSection = () => {
+const HeroSection = ({ onStart }) => {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden min-h-[80px] flex items-center" style={{ backgroundImage: `url(${heroImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Dark Overlay */}
@@ -23,10 +23,13 @@ const HeroSection = () => {
               Hãy để The AlcheZ giúp bạn nâng tầm những giá trị tưởng chừng quen thuộc, biến từng khoảnh khắc trong xưởng nghề thành những câu chuyện truyền cảm hứng và lan tỏa mạnh mẽ trên nền tảng số.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-primary">
+              <button onClick={onStart} className="btn-primary">
                 Bắt đầu ngay
               </button>
-              <button className="flex items-center justify-center gap-2 font-semibold text-white hover:text-primary transition-colors py-3 px-8">
+              <button 
+                onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+                className="flex items-center justify-center gap-2 font-semibold text-white hover:text-primary transition-colors py-3 px-8"
+              >
                 <span>Xem các dự án</span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

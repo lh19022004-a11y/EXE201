@@ -1,7 +1,7 @@
 import React from 'react';
 import ctaBg from '../assets/pottery.png';
 
-const CTASection = () => {
+const CTASection = ({ onStart }) => {
   return (
     <section id="contact" className="py-24 bg-white px-4">
       <div className="max-w-6xl mx-auto relative group overflow-hidden rounded-[48px] bg-secondary" style={{ backgroundImage: `url(${ctaBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
@@ -18,7 +18,7 @@ const CTASection = () => {
             Mỗi nghệ nhân là một nhà thông thái, mỗi sản phẩm là một kiệt tác. Đừng để những giá trị đó bị mai một trong bóng tối.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-primary font-bold py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-all duration-300">
+            <button onClick={onStart} className="bg-white text-primary font-bold py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-all duration-300">
               Liên hệ tư vấn ngay
             </button>
             <button className="bg-transparent border-2 border-white/50 text-white font-bold py-4 px-10 rounded-full hover:bg-white/10 transition-all duration-300">
