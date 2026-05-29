@@ -4,7 +4,7 @@ import weaving from '../assets/weaving.png';
 import bamboo from '../assets/bamboo.png';
 import wood from '../assets/wood.png';
 import flag from '../assets/flag.png';
-import demoVideo from '../assets/Demo.mov';
+const demoVideo = "https://mpjrisjgqelqeimh.public.blob.vercel-storage.com/Demo.mov";
 
 const PortfolioItem = ({ image, title, category, onClick }) => (
   <div 
