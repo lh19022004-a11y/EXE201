@@ -60,31 +60,34 @@ const RegisterModal = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/theaichez@gmail.com", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
         body: JSON.stringify({
+          access_key: "4f3f1a1b-8802-4b0b-8992-b8be1c00ce8c",
           "Họ và tên": formData.name,
           "Số điện thoại": formData.phone,
           "Email liên hệ": formData.email,
           "Làng nghề / Sản phẩm": formData.village || "Chưa cung cấp",
           "Lời nhắn tư vấn": formData.message || "Cần tư vấn dịch vụ truyền thông tổng thể",
-          "_subject": `[Đăng Ký Tư Vấn] Làng nghề truyền thông - ${formData.name}`,
-          "_template": "table"
+          subject: `[Đăng Ký Tư Vấn] Làng nghề truyền thông - ${formData.name}`,
+          from_name: "TheAlcheZ Landing Page"
         })
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         setIsSubmitted(true);
       } else {
-        alert("Gửi thông tin thất bại. Vui lòng kiểm tra xem bạn đã nhấn 'ACTIVATE FORM' trong Gmail theaichez@gmail.com chưa!");
+        alert(result.message || "Gửi thông tin thất bại. Vui lòng thử lại!");
       }
     } catch (error) {
       console.error(error);
-      alert("Đã xảy ra lỗi kết nối! Vui lòng đăng nhập vào Gmail của theaichez@gmail.com và nhấn nút 'ACTIVATE FORM' trong thư gửi từ FormSubmit để kích hoạt biểu mẫu lần đầu tiên.");
+      alert("Đã xảy ra lỗi kết nối mạng! Vui lòng thử lại sau.");
     } finally {
       setIsLoading(false);
     }
