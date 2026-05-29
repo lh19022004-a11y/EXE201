@@ -142,7 +142,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   disabled={isLoading}
                   placeholder="Nguyễn Văn A" 
-                  className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary focus:ring-primary/30'} rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 transition-all text-sm`}
+                  className={`w-full bg-zinc-900/60 border ${errors.name ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-zinc-800 focus:border-primary focus:ring-primary/20 focus:ring-4'} rounded-2xl px-5 py-3.5 text-white placeholder-zinc-500 focus:outline-none transition-all duration-300 text-sm`}
                 />
                 {errors.name && <span className="text-red-400 text-xs mt-0.5">{errors.name}</span>}
               </div>
@@ -159,7 +159,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   disabled={isLoading}
                   placeholder="0912 345 678" 
-                  className={`w-full bg-white/5 border ${errors.phone ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary focus:ring-primary/30'} rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 transition-all text-sm`}
+                  className={`w-full bg-zinc-900/60 border ${errors.phone ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-zinc-800 focus:border-primary focus:ring-primary/20 focus:ring-4'} rounded-2xl px-5 py-3.5 text-white placeholder-zinc-500 focus:outline-none transition-all duration-300 text-sm`}
                 />
                 {errors.phone && <span className="text-red-400 text-xs mt-0.5">{errors.phone}</span>}
               </div>
@@ -176,7 +176,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   disabled={isLoading}
                   placeholder="example@gmail.com" 
-                  className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary focus:ring-primary/30'} rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 transition-all text-sm`}
+                  className={`w-full bg-zinc-900/60 border ${errors.email ? 'border-red-500/80 focus:border-red-500 focus:ring-red-500' : 'border-zinc-800 focus:border-primary focus:ring-primary/20 focus:ring-4'} rounded-2xl px-5 py-3.5 text-white placeholder-zinc-500 focus:outline-none transition-all duration-300 text-sm`}
                 />
                 {errors.email && <span className="text-red-400 text-xs mt-0.5">{errors.email}</span>}
               </div>
@@ -193,7 +193,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   disabled={isLoading}
                   placeholder="Làng cờ Từ Vân, Gốm Bát Tràng..." 
-                  className="w-full bg-white/5 border border-white/10 focus:border-primary focus:ring-primary/30 focus:ring-2 rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none transition-all text-sm"
+                  className="w-full bg-zinc-900/60 border border-zinc-800 focus:border-primary focus:ring-primary/20 focus:ring-4 rounded-2xl px-5 py-3.5 text-white placeholder-zinc-500 focus:outline-none transition-all duration-300 text-sm"
                 />
               </div>
 
@@ -209,7 +209,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                   disabled={isLoading}
                   placeholder="Tôi muốn quảng bá thương hiệu, làm video ngắn cho làng nghề..." 
                   rows="3"
-                  className="w-full bg-white/5 border border-white/10 focus:border-primary focus:ring-primary/30 focus:ring-2 rounded-2xl px-5 py-3 text-white placeholder-zinc-500 focus:outline-none transition-all text-sm resize-none"
+                  className="w-full bg-zinc-900/60 border border-zinc-800 focus:border-primary focus:ring-primary/20 focus:ring-4 rounded-2xl px-5 py-3.5 text-white placeholder-zinc-500 focus:outline-none transition-all duration-300 text-sm resize-none"
                 />
               </div>
 
