@@ -80,11 +80,11 @@ const RegisterModal = ({ isOpen, onClose }) => {
       if (response.ok) {
         setIsSubmitted(true);
       } else {
-        alert("Gửi thông tin thất bại. Vui lòng thử lại!");
+        alert("Gửi thông tin thất bại. Vui lòng kiểm tra xem bạn đã nhấn 'ACTIVATE FORM' trong Gmail theaichez@gmail.com chưa!");
       }
     } catch (error) {
       console.error(error);
-      alert("Đã xảy ra lỗi kết nối. Vui lòng thử lại sau!");
+      alert("Đã xảy ra lỗi kết nối! Vui lòng đăng nhập vào Gmail của theaichez@gmail.com và nhấn nút 'ACTIVATE FORM' trong thư gửi từ FormSubmit để kích hoạt biểu mẫu lần đầu tiên.");
     } finally {
       setIsLoading(false);
     }
