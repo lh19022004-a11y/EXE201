@@ -5,6 +5,7 @@ import bamboo from '../assets/bamboo.png';
 import wood from '../assets/wood.png';
 import flag from '../assets/flag.png';
 const demoVideo = "https://mpjrisjgqelqeimh.public.blob.vercel-storage.com/Demo.mov";
+const bambooVideo = "/copy_61A2546A-3FE5-4D05-8DCB-57F2F4D4711D.mov";
 
 const PortfolioItem = ({ image, title, category, onClick }) => (
   <div 
@@ -67,7 +68,7 @@ const PortfolioSection = () => {
       title: "Mây Tre Đan", 
       category: "Thủ công mỹ nghệ", 
       image: bamboo,
-      video: null,
+      video: bambooVideo,
       description: "Nghệ thuật mây tre đan Việt Nam khéo léo biến những sợi tre, mây mộc mạc thành các sản phẩm sinh hoạt nghệ thuật và đồ nội thất trang trí tinh xảo xuất khẩu. Từng đường đan tỉ mỉ kết hợp hoàn mỹ giữa sự dẻo dai tự nhiên của cây tre đất Việt và bàn tay tài hoa của người nghệ nhân.",
       details: [
         { label: "Vị trí địa lý", value: "Phú Vinh, Huyện Chương Mỹ, Hà Nội" },
