@@ -60,7 +60,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/e5956c5454093c08680110b3c607bd0d", {
+      const response = await fetch("https://formsubmit.co/ajax/lh19022004@gmail.com", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
