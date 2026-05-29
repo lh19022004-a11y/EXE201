@@ -33,8 +33,7 @@ const HeroSection = ({ onStart }) => {
         preload="auto"
         poster={heroImg}
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
-        // Thay đường dẫn bên dưới bằng đường link Vercel Blob bạn vừa copy ở Bước 1
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4"
+        src="https://mpjrisjgqelqeimh.public.blob.vercel-storage.com/Demo.mov"
       />
 
       {/* Subtle overlay to enhance text readability */}
