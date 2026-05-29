@@ -174,7 +174,7 @@ const PortfolioSection = () => {
               {selectedProject.video ? (
                 <video 
                   src={selectedProject.video}
-                  className="w-full h-full object-cover md:absolute md:inset-0"
+                  className="w-full h-full object-contain md:absolute md:inset-0"
                   controls
                   autoPlay
                   playsInline
