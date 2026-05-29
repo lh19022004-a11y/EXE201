@@ -41,7 +41,7 @@ const PortfolioSection = () => {
       title: "Gốm Bát Tràng", 
       category: "Nghệ thuật Đất nung", 
       image: pottery,
-      video: demoVideo,
+      video: null,
       description: "Gốm Bát Tràng là tinh hoa di sản gốm sứ truyền thống với lịch sử hơn 700 năm tại Gia Lâm, Hà Nội. Mỗi tác phẩm nghệ thuật đất nung được thổi hồn qua bàn tay khéo léo vuốt nặn trên bàn xoay, vẽ họa tiết tùng cúc trúc mai tinh tế và phủ các lớp men lam, men rạn độc bản nung trong lò nhiệt độ cực cao.",
       details: [
         { label: "Vị trí địa lý", value: "Gia Lâm, Hà Nội, Việt Nam" },
@@ -54,7 +54,7 @@ const PortfolioSection = () => {
       title: "Lụa Hà Đông", 
       category: "Dệt lụa truyền thống", 
       image: weaving,
-      video: demoVideo,
+      video: null,
       description: "Lụa Vạn Phúc (Hà Đông) nức tiếng gần xa bởi chất liệu tơ tằm tự nhiên óng ả, mềm mịn, mặc mát mùa hè và ấm áp mùa đông. Đây là biểu tượng của sự sang trọng, quý phái, kết hợp hoàn hảo giữa nghề nuôi tằm ươm tơ, dệt lụa truyền đời và tư duy sáng tạo thời trang đương đại.",
       details: [
         { label: "Vị trí địa lý", value: "Phường Vạn Phúc, Quận Hà Đông, Hà Nội" },
@@ -67,7 +67,7 @@ const PortfolioSection = () => {
       title: "Mây Tre Đan", 
       category: "Thủ công mỹ nghệ", 
       image: bamboo,
-      video: demoVideo,
+      video: null,
       description: "Nghệ thuật mây tre đan Việt Nam khéo léo biến những sợi tre, mây mộc mạc thành các sản phẩm sinh hoạt nghệ thuật và đồ nội thất trang trí tinh xảo xuất khẩu. Từng đường đan tỉ mỉ kết hợp hoàn mỹ giữa sự dẻo dai tự nhiên của cây tre đất Việt và bàn tay tài hoa của người nghệ nhân.",
       details: [
         { label: "Vị trí địa lý", value: "Phú Vinh, Huyện Chương Mỹ, Hà Nội" },
@@ -80,7 +80,7 @@ const PortfolioSection = () => {
       title: "Trạm Khắc Gỗ", 
       category: "Kiến trúc cổ", 
       image: wood,
-      video: demoVideo,
+      video: null,
       description: "Chạm khắc gỗ truyền thống lưu giữ nét rêu phong cổ kính qua những bức phù điêu, hoành phi câu đối và kiến trúc đình chùa Việt cổ. Đỉnh cao của nghệ thuật điêu khắc gỗ nằm ở kỹ thuật trổ thủng, đục bong tạo hình 3D sinh động trên các thớ gỗ quý tự nhiên bền bỉ cùng thời gian.",
       details: [
         { label: "Vị trí địa lý", value: "Thiết Úng, Huyện Đông Anh, Hà Nội" },
@@ -168,17 +168,25 @@ const PortfolioSection = () => {
               </svg>
             </button>
 
-            {/* Left Column: Video Player */}
-            <div className="w-full md:w-1/2 bg-black flex items-center justify-center relative aspect-video md:aspect-auto md:h-full">
-              <video 
-                src={selectedProject.video}
-                className="w-full h-full object-cover md:absolute md:inset-0"
-                controls
-                autoPlay
-                playsInline
-              >
-                Trình duyệt của bạn không hỗ trợ xem video này.
-              </video>
+            {/* Left Column: Video Player or Image Fallback */}
+            <div className="w-full md:w-1/2 bg-black flex items-center justify-center relative aspect-video md:aspect-auto md:h-full overflow-hidden">
+              {selectedProject.video ? (
+                <video 
+                  src={selectedProject.video}
+                  className="w-full h-full object-cover md:absolute md:inset-0"
+                  controls
+                  autoPlay
+                  playsInline
+                >
+                  Trình duyệt của bạn không hỗ trợ xem video này.
+                </video>
+              ) : (
+                <img 
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover md:absolute md:inset-0 transform scale-100 hover:scale-105 transition-transform duration-700"
+                />
+              )}
             </div>
 
             {/* Right Column: Detailed Cultural Info */}
