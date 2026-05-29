@@ -5,7 +5,7 @@ import bamboo from '../assets/bamboo.png';
 import wood from '../assets/wood.png';
 import flag from '../assets/flag.png';
 const demoVideo = "https://mpjrisjgqelqeimh.public.blob.vercel-storage.com/Demo.mov";
-const bambooVideo = "/copy_61A2546A-3FE5-4D05-8DCB-57F2F4D4711D.mov";
+const bambooVideo = "https://mpjrisjgqelqeimh.public.blob.vercel-storage.com/copy_61A2546A-3FE5-4D05-8DCB-57F2F4D4711D.mov";
 
 const PortfolioItem = ({ image, title, category, onClick }) => (
   <div 
