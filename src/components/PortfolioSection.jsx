@@ -4,35 +4,41 @@ import weaving from '../assets/weaving.png';
 import bamboo from '../assets/bamboo.png';
 import wood from '../assets/wood.png';
 import flag from '../assets/flag.png';
+import ScrollReveal3D from './ScrollReveal3D';
+import Tilt3D from './Tilt3D';
+
 const demoVideo = "https://mpjrisjgqelqeimh.public.blob.vercel-storage.com/Demo.mov";
 const bambooVideo = "https://mpjrisjgqelqeimh.public.blob.vercel-storage.com/copy_61A2546A-3FE5-4D05-8DCB-57F2F4D4711D.mov";
 
 const PortfolioItem = ({ image, title, category, onClick }) => (
-  <div 
-    onClick={onClick}
-    className="group relative overflow-hidden rounded-3xl aspect-[3/4] cursor-pointer"
-  >
-    <img 
-      src={image} 
-      alt={title} 
-      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-      <span className="text-primary font-bold text-xs uppercase tracking-widest mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-        {category}
-      </span>
-      <h3 className="text-white text-2xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-        {title}
-      </h3>
-      <button className="mt-4 text-white text-sm font-semibold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 hover:text-primary">
-        <span>Xem chi tiết</span>
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+  <Tilt3D maxRotation={10} scale={1.04} className="h-full">
+    <div 
+      onClick={onClick}
+      className="group relative overflow-hidden rounded-3xl aspect-[3/4] cursor-pointer h-full border border-zinc-155"
+    >
+      <img 
+        src={image} 
+        alt={title} 
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+        <span className="text-primary font-bold text-xs uppercase tracking-widest mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+          {category}
+        </span>
+        <h3 className="text-white text-2xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+          {title}
+        </h3>
+        <button className="mt-4 text-white text-sm font-semibold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 hover:text-primary">
+          <span>Xem chi tiết</span>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
+  </Tilt3D>
 );
+
 
 const PortfolioSection = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -123,27 +129,30 @@ const PortfolioSection = () => {
   }, [selectedProject]);
 
   return (
-    <section id="portfolio" className="py-24 bg-white">
+    <section id="portfolio" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="heading-2 mb-4">Những <span className="text-secondary italic">Di Sản Viral</span></h2>
-            <p className="text-zinc-600 text-lg">
-              Khám phá những chiến dịch truyền thông đã giúp các làng nghề Việt Nam thu hút hàng triệu lượt xem và sự quan tâm từ cộng đồng quốc tế.
-            </p>
+        <ScrollReveal3D direction="up" delay={100} duration={850}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="heading-2 mb-4">Những <span className="text-secondary italic">Di Sản Viral</span></h2>
+              <p className="text-zinc-600 text-lg">
+                Khám phá những chiến dịch truyền thông đã giúp các làng nghề Việt Nam thu hút hàng triệu lượt xem và sự quan tâm từ cộng đồng quốc tế.
+              </p>
+            </div>
+            <button className="btn-outline whitespace-nowrap cursor-pointer">
+              Xem tất cả dự án
+            </button>
           </div>
-          <button className="btn-outline whitespace-nowrap">
-            Xem tất cả dự án
-          </button>
-        </div>
+        </ScrollReveal3D>
         
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-4 px-4 scrollbar-none md:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
           {projects.map((project, idx) => (
-            <PortfolioItem 
-              key={idx} 
-              {...project} 
-              onClick={() => setSelectedProject(project)}
-            />
+            <ScrollReveal3D key={idx} direction="up" delay={idx * 100} duration={850} className="h-full w-[75vw] sm:w-[280px] flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-align-none">
+              <PortfolioItem 
+                {...project} 
+                onClick={() => setSelectedProject(project)}
+              />
+            </ScrollReveal3D>
           ))}
         </div>
       </div>
@@ -155,12 +164,12 @@ const PortfolioSection = () => {
           onClick={() => setSelectedProject(null)}
         >
           <div 
-            className="relative w-full max-w-5xl bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row h-auto md:h-[640px] max-h-[90vh] my-auto"
+            className="relative w-full max-w-5xl bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col md:flex-row h-auto md:h-[640px] max-h-[90vh] my-auto animate-modal-3d"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button 
-              className="absolute top-4 right-4 z-25 w-10 h-10 flex items-center justify-center bg-black/60 hover:bg-black/80 text-white rounded-full transition-colors border border-white/10 focus:outline-none"
+              className="absolute top-4 right-4 z-25 w-10 h-10 flex items-center justify-center bg-black/60 hover:bg-black/80 text-white rounded-full transition-colors border border-white/10 focus:outline-none cursor-pointer"
               onClick={() => setSelectedProject(null)}
               aria-label="Close details"
             >
@@ -221,7 +230,7 @@ const PortfolioSection = () => {
               {/* Action Button */}
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="btn-primary mt-8 w-full text-center py-3 text-base"
+                className="btn-primary mt-8 w-full text-center py-3 text-base cursor-pointer"
               >
                 Quay lại
               </button>

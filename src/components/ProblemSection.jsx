@@ -1,13 +1,17 @@
 import React from 'react';
+import ScrollReveal3D from './ScrollReveal3D';
+import Tilt3D from './Tilt3D';
 
 const ProblemCard = ({ icon, title, description }) => (
-  <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-zinc-100">
-    <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
-      {icon}
+  <Tilt3D maxRotation={8} scale={1.03} className="h-full">
+    <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-zinc-100 h-full flex flex-col justify-start">
+      <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
+        {icon}
+      </div>
+      <h3 className="heading-3 text-zinc-900">{title}</h3>
+      <p className="text-zinc-600 leading-relaxed text-sm md:text-base">{description}</p>
     </div>
-    <h3 className="heading-3 text-zinc-900">{title}</h3>
-    <p className="text-zinc-600 leading-relaxed">{description}</p>
-  </div>
+  </Tilt3D>
 );
 
 const ProblemSection = () => {
@@ -42,15 +46,20 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section id="problem" className="bg-background py-24">
+    <section id="problem" className="bg-background py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="heading-2 max-w-3xl mx-auto">Những khó khăn của làng nghề truyền thống trong kỷ nguyên số</h2>
-          <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mt-4"></div>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <ScrollReveal3D direction="up" delay={100} duration={800}>
+          <div className="text-center mb-16">
+            <h2 className="heading-2 max-w-3xl mx-auto">Những khó khăn của làng nghề truyền thống trong kỷ nguyên số</h2>
+            <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mt-4"></div>
+          </div>
+        </ScrollReveal3D>
+
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-4 px-4 scrollbar-none md:grid md:grid-cols-3 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
           {problems.map((prob, idx) => (
-            <ProblemCard key={idx} {...prob} />
+            <ScrollReveal3D key={idx} direction="up" delay={idx * 150} duration={800} className="h-full w-[85vw] sm:w-[350px] flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-align-none">
+              <ProblemCard {...prob} />
+            </ScrollReveal3D>
           ))}
         </div>
       </div>
