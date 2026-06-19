@@ -10,9 +10,7 @@ const HeroSection = ({ onStart }) => {
     if (videoRef.current) {
       videoRef.current.defaultMuted = true;
       videoRef.current.muted = true;
-      videoRef.current.play().catch(err => {
-        console.log("Autoplay was prevented on this device, using fallback image:", err);
-      });
+      videoRef.current.play().catch(() => {});
     }
   }, []);
 
