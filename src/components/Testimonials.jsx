@@ -43,12 +43,12 @@ const Testimonials = () => {
           <h2 className="heading-2">Tiếng Nói Từ Xưởng Nghề</h2>
           <p className="text-zinc-600 italic">Niềm tin và sự đồng hành của các nghệ nhân là động lực lớn nhất của chúng tôi.</p>
         </div>
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-6 -mx-4 px-4 scrollbar-none md:grid md:grid-cols-2 md:overflow-visible md:pb-0 md:mx-0 md:px-0 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
           {/* Decorative background shape */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/30 rounded-full blur-3xl -z-10 rotate-12 pointer-events-none"></div>
           
           {reviews.map((review, idx) => (
-            <TestimonialCard key={idx} {...review} className="w-[85vw] sm:w-[450px] flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-align-none" />
+            <TestimonialCard key={idx} {...review} className="w-full" />
           ))}
         </div>
       </div>

@@ -34,13 +34,13 @@ function App() {
       />
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
+      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 flex flex-col gap-3 md:gap-4">
         {/* Zalo Button */}
         <a 
           href="https://zalo.me/0336321483" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="group relative w-14 h-14 bg-[#0068ff] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 border border-white/20 cursor-pointer"
+          className="group relative w-12 h-12 md:w-14 md:h-14 bg-[#0068ff] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 border border-white/20 cursor-pointer"
           aria-label="Chat Zalo"
         >
           {/* Tooltip */}
@@ -53,7 +53,7 @@ function App() {
         {/* Phone Button */}
         <a 
           href="tel:+84336321483" 
-          className="group relative w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 border border-white/20 animate-pulse-ring cursor-pointer"
+          className="group relative w-12 h-12 md:w-14 md:h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 border border-white/20 animate-pulse-ring cursor-pointer"
           aria-label="Gọi điện thoại"
         >
           {/* Tooltip */}

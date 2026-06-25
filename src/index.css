@@ -4,6 +4,7 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', sans-serif;
+    scroll-padding-top: 80px;
   }
   body {
     @apply bg-[#F9F7F2] text-zinc-900;

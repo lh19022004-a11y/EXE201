@@ -87,9 +87,9 @@ const ServicesSection = () => {
           </div>
         </ScrollReveal3D>
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-6 -mx-4 px-4 scrollbar-none md:grid md:grid-cols-3 md:overflow-visible md:pb-0 md:mx-0 md:px-0 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {packages.map((pkg, idx) => (
-            <ScrollReveal3D key={idx} direction="up" delay={idx * 150} duration={900} className="h-full w-[85vw] sm:w-[350px] flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-align-none">
+            <ScrollReveal3D key={idx} direction="up" delay={idx * 150} duration={900} className="h-full">
               <ServiceCard {...pkg} />
             </ScrollReveal3D>
           ))}

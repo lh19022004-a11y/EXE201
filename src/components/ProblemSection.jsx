@@ -55,9 +55,9 @@ const ProblemSection = () => {
           </div>
         </ScrollReveal3D>
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-4 px-4 scrollbar-none md:grid md:grid-cols-3 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {problems.map((prob, idx) => (
-            <ScrollReveal3D key={idx} direction="up" delay={idx * 150} duration={800} className="h-full w-[85vw] sm:w-[350px] flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-align-none">
+            <ScrollReveal3D key={idx} direction="up" delay={idx * 150} duration={800} className="h-full">
               <ProblemCard {...prob} />
             </ScrollReveal3D>
           ))}

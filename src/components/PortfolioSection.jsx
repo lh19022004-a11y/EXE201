@@ -145,9 +145,9 @@ const PortfolioSection = () => {
           </div>
         </ScrollReveal3D>
         
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-4 px-4 scrollbar-none md:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {projects.map((project, idx) => (
-            <ScrollReveal3D key={idx} direction="up" delay={idx * 100} duration={850} className="h-full w-[75vw] sm:w-[280px] flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-align-none">
+            <ScrollReveal3D key={idx} direction="up" delay={idx * 100} duration={850} className="h-full">
               <PortfolioItem 
                 {...project} 
                 onClick={() => setSelectedProject(project)}

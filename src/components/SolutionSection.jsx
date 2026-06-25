@@ -12,7 +12,7 @@ const SolutionSection = () => {
         <div className="lg:flex lg:items-center lg:gap-20">
           <div className="lg:w-1/2 mb-12 lg:mb-0">
             <h2 className="text-white text-4xl md:text-5xl font-bold mb-8">
-              Những giá trị <span className="text-primary italic">TheAlcheZ</span> mang đến cho bạn
+              Những giá trị <span className="text-accent italic">TheAlcheZ</span> mang đến cho bạn
             </h2>
             <div className="space-y-6">
               <p className="text-white/90 text-xl leading-relaxed font-medium">

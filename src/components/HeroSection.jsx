@@ -31,7 +31,7 @@ const HeroSection = ({ onStart }) => {
           {/* Left Content */}
           <div className="lg:w-1/2 mb-12 lg:mb-0">
             <ScrollReveal3D direction="up" delay={150} duration={800}>
-              <div className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-white uppercase bg-primary rounded-full shadow-lg shadow-primary/30">
+              <div className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-white uppercase bg-accent rounded-full shadow-lg shadow-accent/30">
                 Dẫn dắt cảm xúc, Chạm tới truyền thống
               </div>
             </ScrollReveal3D>
@@ -40,7 +40,7 @@ const HeroSection = ({ onStart }) => {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white drop-shadow-md">
                 Biến Điểm Chạm
                 <br />
-                thành <span className="text-primary italic relative inline-block after:absolute after:bottom-1 after:left-0 after:w-full after:h-1.5 after:bg-primary/30 after:-z-10">Ánh Sáng</span>
+                thành <span className="text-accent italic relative inline-block after:absolute after:bottom-1 after:left-0 after:w-full after:h-1.5 after:bg-accent/30 after:-z-10">Ánh Sáng</span>
               </h1>
             </ScrollReveal3D>
             
@@ -51,7 +51,7 @@ const HeroSection = ({ onStart }) => {
             </ScrollReveal3D>
             
             <ScrollReveal3D direction="up" delay={600} duration={950}>
-              <div className="flex flex-row gap-3 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <button onClick={onStart} className="btn-primary shadow-xl shadow-primary/25 cursor-pointer px-4 sm:px-8 text-sm sm:text-base flex-1 sm:flex-none text-center">
                   Bắt đầu ngay
                 </button>
