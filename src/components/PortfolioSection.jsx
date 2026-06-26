@@ -76,7 +76,8 @@ const PortfolioSection = () => {
       title: "Mây Tre Đan", 
       category: "Thủ công mỹ nghệ", 
       image: bamboo,
-      video: bambooVideo,
+      video: null,
+      youtube: "mx1x2o4UqWI",
       description: "Nghệ thuật mây tre đan Việt Nam khéo léo biến những sợi tre, mây mộc mạc thành các sản phẩm sinh hoạt nghệ thuật và đồ nội thất trang trí tinh xảo xuất khẩu. Từng đường đan tỉ mỉ kết hợp hoàn mỹ giữa sự dẻo dai tự nhiên của cây tre đất Việt và bàn tay tài hoa của người nghệ nhân.",
       details: [
         { label: "Vị trí địa lý", value: "Phú Vinh, Huyện Chương Mỹ, Hà Nội" },
