@@ -34,6 +34,13 @@ const Navbar = ({ onStart }) => {
                 <a
                   key={link.name}
                   href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.href);
+                    if (target) {
+                      target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className="text-zinc-700 hover:text-primary transition-colors duration-200 font-medium text-sm"
                 >
                   {link.name}
