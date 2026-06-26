@@ -23,15 +23,15 @@ const TestimonialCard = ({ quote, author, role, avatarColor, className = '' }) =
 const Testimonials = () => {
   const reviews = [
     {
-      quote: "Từ khi hợp tác với The AlcheZ, doanh số bán gốm của chúng tôi tăng gấp 3 lần. Các bạn trẻ bắt đầu tìm đến xưởng để trải nghiệm thực tế nhiều hơn.",
+      quote: "Cô thấy video các con làm đẹp lắm. cô thì không rõ về mảng này nhiều cô thấy các con quay đủ các qui trình và chỉnh sửa rất đẹp. cô có cho các anh chị nhà cô sem và các anh chị cũng thấy đẹp. các anh chị cũng úp lên phây búc rồi con ạ.",
       author: "Nghệ nhân Nguyễn Văn An",
       role: "Làng gốm Bát Tràng",
       avatarColor: "bg-primary"
     },
     {
-      quote: "The AlcheZ không chỉ quay phim giỏi mà còn thấu hiểu tâm hồn của người thợ dệt. Những thước phim lụa Hà Đông thực sự chạm đến trái tim người xem.",
+      quote: "cô cảm ơn mấy đứa nhé thi thoảng cô lại nhờ quay có những dịp nhà cô có khách đặt làm theo iêu cầu thì cô sẽ gọi mấy đứa đến quay nhé.",
       author: "Bà Trần Thị Lan",
-      role: "Chủ xưởng dệt Lụa Quê",
+      role: "Chủ xưởng Quạt Chàng Sơn",
       avatarColor: "bg-secondary"
     }
   ];
@@ -46,7 +46,7 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
           {/* Decorative background shape */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/30 rounded-full blur-3xl -z-10 rotate-12 pointer-events-none"></div>
-          
+
           {reviews.map((review, idx) => (
             <TestimonialCard key={idx} {...review} className="w-full" />
           ))}
