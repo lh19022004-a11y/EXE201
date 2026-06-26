@@ -3,6 +3,7 @@ import pottery from '../assets/pottery.png';
 import weaving from '../assets/weaving.png';
 import bamboo from '../assets/bamboo.png';
 import wood from '../assets/wood.png';
+import fan from '../assets/fan.png';
 import flag from '../assets/flag.png';
 import ScrollReveal3D from './ScrollReveal3D';
 import Tilt3D from './Tilt3D';
@@ -49,6 +50,7 @@ const PortfolioSection = () => {
       category: "Nghệ thuật Đất nung", 
       image: pottery,
       video: null,
+      youtube: "goTy1PHGyig",
       description: "Gốm Bát Tràng là tinh hoa di sản gốm sứ truyền thống với lịch sử hơn 700 năm tại Gia Lâm, Hà Nội. Mỗi tác phẩm nghệ thuật đất nung được thổi hồn qua bàn tay khéo léo vuốt nặn trên bàn xoay, vẽ họa tiết tùng cúc trúc mai tinh tế và phủ các lớp men lam, men rạn độc bản nung trong lò nhiệt độ cực cao.",
       details: [
         { label: "Vị trí địa lý", value: "Gia Lâm, Hà Nội, Việt Nam" },
@@ -84,16 +86,17 @@ const PortfolioSection = () => {
       ]
     },
     { 
-      title: "Trạm Khắc Gỗ", 
-      category: "Kiến trúc cổ", 
-      image: wood,
+      title: "Làng quạt Chàng Sơn", 
+      category: "Thủ công mỹ nghệ", 
+      image: fan,
       video: null,
-      description: "Chạm khắc gỗ truyền thống lưu giữ nét rêu phong cổ kính qua những bức phù điêu, hoành phi câu đối và kiến trúc đình chùa Việt cổ. Đỉnh cao của nghệ thuật điêu khắc gỗ nằm ở kỹ thuật trổ thủng, đục bong tạo hình 3D sinh động trên các thớ gỗ quý tự nhiên bền bỉ cùng thời gian.",
+      youtube: "JGWOo2DjBV4",
+      description: "Làng nghề làm quạt Chàng Sơn mang đậm nét văn hóa truyền thống với những chiếc quạt giấy, quạt nan tinh xảo. Qua bàn tay khéo léo của các nghệ nhân, những nan tre, tờ giấy lụa được biến hóa thành những tác phẩm nghệ thuật độc đáo, lưu giữ hồn cốt dân tộc.",
       details: [
-        { label: "Vị trí địa lý", value: "Thiết Úng, Huyện Đông Anh, Hà Nội" },
-        { label: "Niên đại lịch sử", value: "Hơn 300 năm hình thành và chạm khắc mỹ nghệ" },
-        { label: "Kỹ thuật điêu khắc", value: "Đục trổ rồng bay phượng múa, hoa văn nổi 3D tinh xảo" },
-        { label: "Ý nghĩa nghệ thuật", value: "Bảo tồn giá trị kiến trúc cung đình và tín ngưỡng cổ xưa" }
+        { label: "Vị trí địa lý", value: "Xã Chàng Sơn, Huyện Thạch Thất, Hà Nội" },
+        { label: "Niên đại lịch sử", value: "Hàng trăm năm gắn bó với nghề làm quạt truyền thống" },
+        { label: "Đặc trưng sản phẩm", value: "Quạt giấy, quạt lụa, quạt nan tre tinh xảo" },
+        { label: "Giá trị văn hóa", value: "Lưu giữ nét đẹp thanh tao và lan tỏa văn hóa Việt" }
       ]
     },
     { 
@@ -180,7 +183,16 @@ const PortfolioSection = () => {
 
             {/* Left Column: Video Player or Image Fallback */}
             <div className="w-full md:w-1/2 bg-black flex items-center justify-center relative aspect-video md:aspect-auto md:h-full overflow-hidden">
-              {selectedProject.video ? (
+              {selectedProject.youtube ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${selectedProject.youtube}?autoplay=1`}
+                  className="w-full h-full object-cover md:absolute md:inset-0"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              ) : selectedProject.video ? (
                 <video 
                   src={selectedProject.video}
                   className="w-full h-full object-contain md:absolute md:inset-0"
