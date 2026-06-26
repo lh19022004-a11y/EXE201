@@ -30,7 +30,7 @@ const Testimonials = () => {
     },
     {
       quote: "cô cảm ơn mấy đứa nhé thi thoảng cô lại nhờ quay có những dịp nhà cô có khách đặt làm theo iêu cầu thì cô sẽ gọi mấy đứa đến quay nhé.",
-      author: "Bà Trần Thị Lan",
+      author: "Bà Nguyễn Thị Tuấn",
       role: "Chủ xưởng Quạt Chàng Sơn",
       avatarColor: "bg-secondary"
     }
